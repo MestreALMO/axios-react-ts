@@ -9,7 +9,9 @@ export const PokeApi = () => {
     const api = axios.create({
       baseURL: "https://pokeapi.co/api/v2/pokemon",
     });
-    api.get("/").then((response) => setApiData(response.data.results));
+    api
+      .get("/?limit=151")
+      .then((response) => setApiData(response.data.results));
   }, []);
 
   return (
@@ -17,7 +19,9 @@ export const PokeApi = () => {
       <Typography>{apiData.length} Pokémons: </Typography>
       <ul>
         {apiData.map((e, index) => (
-          <li key={index}>{e.name}</li>
+          <li key={index}>
+            {e.name.charAt(0).toUpperCase() + e.name.slice(1)}
+          </li>
         ))}
       </ul>
     </>
