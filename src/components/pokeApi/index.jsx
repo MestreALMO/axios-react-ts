@@ -24,7 +24,7 @@ export const PokeApi = () => {
               "0".repeat(
                 apiData.length.toString().length - index.toString().length
               )}
-            {index}: {e.name.charAt(0).toUpperCase() + e.name.slice(1)}
+            {index + 1}: {e.name.charAt(0).toUpperCase() + e.name.slice(1)}
           </li>
         ))}
       </ul>
