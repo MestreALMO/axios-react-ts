@@ -20,7 +20,7 @@ export const PokeApi = () => {
       <ul>
         {apiData.map((e, index) => (
           <li key={index}>
-            {e.name.charAt(0).toUpperCase() + e.name.slice(1)}
+            {index}: {e.name.charAt(0).toUpperCase() + e.name.slice(1)}
           </li>
         ))}
       </ul>
