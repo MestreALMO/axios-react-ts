@@ -1,11 +1,15 @@
 import { Typography } from "@mui/material";
 import axios from "axios";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+
+interface apiDataProps {
+  name: string;
+}
 
 export const PokeApi = () => {
-  const [apiData, setApiData] = useState([]);
+  const [apiData, setApiData] = useState([] as apiDataProps[]);
 
-  useState(() => {
+  useEffect(() => {
     const api = axios.create({
       baseURL: "https://pokeapi.co/api/v2/pokemon",
     });
